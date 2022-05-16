@@ -17,15 +17,7 @@ vendas_sega = df_sega['Vendas'].sum()
 df_bandai = dados.loc[(dados['Fabricante']=='Bandai')]
 vendas_bandai = df_bandai['Vendas'].sum()
 
-df_nokia = dados.loc[(dados['Fabricante']=='Nokia')]
-vendas_nokia = df_nokia['Vendas'].sum()
-
-df_atari = dados.loc[(dados['Fabricante']=='Atari')]
-vendas_atari = df_atari['Vendas'].sum()
-
-
-
-venda = [vendas_nintendo, vendas_sony, vendas_sega, vendas_bandai, vendas_nokia, vendas_atari]
+venda = [vendas_nintendo, vendas_sony, vendas_sega, vendas_bandai]
 
 fabricante = dados['Fabricante']
 fabricante = fabricante.unique()
@@ -34,7 +26,7 @@ colors = [ 'lightgray', 'orange', 'coral', 'red','yellow', 'black']
 
 
 patches, texts, autotexts = plt.pie(venda, colors=colors, autopct="",
-startangle=90, explode=(0,0,0.1,0.1,0.2,0.3),)
+startangle=90, explode=(0.1,0.1,0.2,0.3),)
 
 plt.title('Venda de Consoles Portáteis por Fabricante')
 plt.legend(patches, fabricante, loc="lower right")
